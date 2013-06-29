@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="domain.Poster" table="posters">
+		<id name="id">
+			<generator class="identity"></generator>
+		</id>
+		<property name="title"></property>
+		<property name="text"></property>
+		<property name="posterIP"></property>
+		<property name="createTime"></property>
+		<property name="lastReplyTime"></property>
+
+		<many-to-one name="parentPoster" class="domain.Poster" column="parentPoster_id"></many-to-one>
+		<bag name="childPosters" inverse="true" lazy="false">
+			<key column="parentPoster_id"></key>
+			<one-to-many class="domain.Poster" />
+		</bag>
+	</class>
+</hibernate-mapping>

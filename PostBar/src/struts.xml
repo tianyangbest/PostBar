@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.custom.i18n.resources" value="messages"></constant>
+
+	<package name="default" namespace="/" extends="struts-default">
+		<action name="publishPoster" class="PublishPosterActionBean">
+			<result type="redirect">/listPosters.action</result>
+		</action>
+
+		<action name="listPosters" class="ListPostersActionBean">
+			<result>/WEB-INF/post/ListPosters.jsp</result>
+		</action>
+
+		<action name="showPoster" class="ShowPosterActionBean">
+			<result>/WEB-INF/post/ShowPoster.jsp</result>
+		</action>
+
+	</package>
+
+
+</struts>
