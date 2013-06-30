@@ -26,12 +26,10 @@ public class PosterService {
 	}
 
 	public List<Poster> findAllPosters() {
-		// TODO Auto-generated method stub
 		return posterDAO.findAllPosters();
 	}
 
 	public Poster findbyId(Long id) {
-		// TODO Auto-generated method stub
 		return posterDAO.findbyId(id);
 	}
 
